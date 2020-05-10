@@ -1,0 +1,9 @@
+.Content {
+    display: flex;
+    margin: auto;
+    height: 40px;
+}
+.Content:hover {
+    color: #f48fb1;
+}
+

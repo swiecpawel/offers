@@ -1,0 +1,43 @@
+.Content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+button {
+
+    display: flex;
+    justify-content: center;
+    border-radius: 25px;
+    height: 42px;
+    width: 106px;
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.LogBut {
+    background-color: #AB47BC;
+}
+.LogBut:hover {
+    background-color: #773183;
+
+}
+.LogBut:hover .roof {
+    transform: rotate(180deg);
+}
+
+.PostJob{
+    background-color: #FF4081;
+}
+.PostJob:hover {
+     background-color: #B22C5A;
+}
+.roof {
+    transition: 0.5s;
+}
