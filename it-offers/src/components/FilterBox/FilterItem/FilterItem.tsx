@@ -1,11 +1,14 @@
 import React, {ReactNode} from "react";
 import style from './../FilterBox.module.css'
-import { Children } from '../../Header/Header'
 
 
+interface PropsFilter {
+    language: string;
+    children: ReactNode;
+}
 
-const filterItem  = ({ children }: Children ) => (
-    <div className={style.lang}>{children}</div>
+const filterItem  = ({language, children }: PropsFilter ) => (
+    <div className={`${style.lang}`}>{children}</div>
 );
 
 export default filterItem;

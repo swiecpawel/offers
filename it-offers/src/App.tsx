@@ -57,16 +57,21 @@ function App() {
 }
 */
 
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import FilterBox from './components/FilterBox/FilterBox';
 import Layout from './components/Layout/Layout';
 import AddOffer from "./components/Pages/AddOffer/AddOffer";
 import {Route, Switch} from "react-router";
+import {useDispatch} from "react-redux";
+import {fetchAllOffers, OfferType} from "./features/offer/offerSlice";
+import {OffersType} from "./features/offer/offerSlice";
+import {store} from "./app/store";
 
 function App() {
-
+    const [offers, setOffers] = useState(new Array<OfferType>());
+    const dispatch = useDispatch()
 
   return (
       <>
@@ -76,7 +81,9 @@ function App() {
             <FilterBox/>
         </Switch>
         <Layout />
+
       </>
+
   );
 }
 

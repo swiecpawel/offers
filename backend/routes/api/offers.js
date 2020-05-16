@@ -1,11 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const auth = require('../../middleware/auth');
 
 const Offer = require('../../models/Offer');
 
 // @rout GET api/items
 // @desc Get All Offers
 // @access Public
+
 router.get('/', (req, res) => {
     Offer.find()
         .sort({date: -1})
@@ -14,8 +16,8 @@ router.get('/', (req, res) => {
 
 // @rout Post api/items
 // @desc Create A Post
-// @access Public
-router.post('/', (req, res) => {
+// @access Private
+router.post('/', auth, (req, res) => {
     const newOffer = new Offer({
         shortName: req.body.shortName,
         companyWebsite: req.body.companyWebsite,
@@ -40,8 +42,8 @@ router.post('/', (req, res) => {
 
 // @rout DELETE api/items/:id
 // @desc Delete An Offer
-// @access Public
-router.delete('/:id', (req, res) => {
+// @access Private
+router.delete('/:id', auth, (req, res) => {
     Offer.findById(req.params.id)
         .then(item => item.remove().then(() => res.json({success: true})))
         .catch(err => res.status(404).json({success: false}));

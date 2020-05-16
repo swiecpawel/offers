@@ -1,10 +1,14 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducerer from '../features/counter/counterSlice';
+import counterReducer from '../features/counter/counterSlice';
+import offerReducer from '../features/offer/offerSlice'
+
+const reducer = {
+  counter: counterReducer,
+  offers: offerReducer,
+};
 
 export const store = configureStore({
-  reducer: {
-    counter: counterReducerer,
-  },
+  reducer
 });
 
 export type RootState = ReturnType<typeof store.getState>;
