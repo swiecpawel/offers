@@ -1,9 +1,8 @@
-import React, {ReactNode, useEffect, useRef, useState} from "react";
-import style from './Offers.module.css';
-import Offer from './Offer/Offer'
+import React, {useEffect, useState} from "react";
 import { OffersType, OfferType } from '../../../features/offer/offerSlice'
-import {useDispatch} from 'react-redux';
-import fetchAllOffers from '../../../features/offer/offerSlice'
+import {useDispatch, useSelector} from 'react-redux';
+import {fetchAllOffers} from '../../../features/offer/offerSlice'
+import {selectCount} from "../../../features/counter/counterSlice";
 import {store} from "../../../app/store";
 
 const offersArray : OffersType ={
@@ -58,24 +57,34 @@ const fetchOffers = () => {
 };*/
 
 
-const offers = () => {
-    const dispatch = useDispatch()
-    useEffect(() => {
+const Offers = () => {
 
-    }, []);
+    const [offers, newOffers] = useState([] as OfferType[]);
+    const dispatch = useDispatch();
+    useEffect(() => {
+  try {
+  dispatch(fetchAllOffers())
+  }
+  catch (e) {
+      console.log(e)
+  }
+}, []);
 
     return (
+                <div>
+                    <button> Empty Button </button>
+                </div>
 
-        <main className={style.Content}>
+/*        <main className={style.Content}>
             {
                 offersArray.offers.map((offer, index) => {
                     return <Offer language={`${offer.technology.tech}`}>Offer id: {offer.id}</Offer>
                 })
             }
 
-        </main>
+        </main>*/
     );
 };
 
 
-export default offers;
+export default Offers;
