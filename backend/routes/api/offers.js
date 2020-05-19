@@ -49,5 +49,15 @@ router.delete('/:id', auth, (req, res) => {
         .catch(err => res.status(404).json({success: false}));
 });
 
+// @rout GET api/items
+// @desc Get Offers by tech
+// @access Public
+router.get('/tech/:techno', (req, res) => {
+
+    Offer.find({"technology.tech" : req.params.techno })
+        .sort({date: -1})
+        .then(items => res.json(items))
+});
+
 
 module.exports = router;

@@ -1,21 +1,124 @@
+
 .Content {
     display: flex;
-    height: 100px;
-    width: 100%;
-    border-radius: 40px;
-    margin: 10px;
-}
-/*
-
-.Content ul {
-    margin: auto;
+    justify-content: space-between;
     text-align: center;
+    height: 80px;
+    width: 100%;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: white;
+    box-shadow: 1px 2px #a4a4a4;
+
 }
 
-.Content li {
-    list-style-type: none;
-    border: 2px solid black;
-    border-radius: 15px;
-    margin: 10px;
-}*/
+.Content .html{
+    background-color: blue;
+    width: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 
+}
+
+.Content .cpp{
+    background-color: yellow;
+    width: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.Content .dev{
+    background-color: orange;
+    width: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.Content .html{
+    background-color: blue;
+    width: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.Content .php{
+    background-color: deepskyblue;
+    width: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.Content .javascript{
+    background-color: green;
+    width: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.Content .ruby{
+    background-color: deeppink;
+    width: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.Content .python{
+    background-color: darkslategray;
+    width: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.Content .java{
+    background-color: orangered;
+    width: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.Content .net{
+    background-color: tomato;
+    width: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.Content .scala{
+    background-color: darkviolet;
+    width: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.Content .mobile{
+    background-color: salmon;
+    width: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.Content .testing{
+    background-color: teal;
+    width: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.Content .UX{
+    background-color: darkseagreen;
+    width: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.Content .PM{
+    background-color: olivedrab;
+    width: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.Content .game{
+    background-color: skyblue;
+    width: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.Content .bitchain{
+    background-color: darkgoldenrod;
+    width: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.Content .security{
+    background-color: deeppink;
+    width: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}

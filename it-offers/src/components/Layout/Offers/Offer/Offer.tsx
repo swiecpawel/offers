@@ -8,7 +8,7 @@ interface PropsOffer {
 
 const offer = ({language, children} : PropsOffer) => (
     <main className={style.Content}>
-        <div className={language}>{children}</div>
+        <div className={style[language]}></div>{children}
     </main>
 );
 

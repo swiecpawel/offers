@@ -1,16 +1,15 @@
 .Content {
-width: 700px;
-
-}
-
-.Content ul {
+    height: 550px;
+    width: 60%;
+    padding: 1em;
     margin: auto;
-    text-align: center;
+    background-color: #f4f4f4;
+    overflow: auto;
+    direction: ltr;
+    text-align: left;
 }
 
-.Content li {
-    list-style-type: none;
-    border: 2px solid black;
-    border-radius: 15px;
-    margin: 10px;
+.offerItem {
+    display: flex;
+    background-color: lightslategray;
 }
