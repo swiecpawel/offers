@@ -1,6 +1,6 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
-import offerReducer from '../features/offer/offerSlice'
+import offerReducer from '../slices/offer/offerSlice'
 
 const reducer = {
   counter: counterReducer,

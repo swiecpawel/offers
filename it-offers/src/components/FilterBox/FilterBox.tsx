@@ -9,7 +9,7 @@ import { GiOrbWand, GiVrHeadset, GiCheckedShield } from 'react-icons/gi';
 import { MdVideogameAsset } from 'react-icons/md';
 import { IoLogoBitcoin } from 'react-icons/io';
 import {NavLink, useLocation} from 'react-router-dom';
-import { fetchOffersByTech } from "../../features/offer/offerSlice";
+import { fetchOffersByTech } from "../../slices/offer/offerSlice";
 import { useDispatch } from "react-redux";
 
 interface TextObject {
@@ -42,17 +42,26 @@ const FilterBox = () => {
     let location = useLocation();
     let curPath = location.pathname.substr(1);
 
+    if (location.pathname === '/'){
+        curPath = 'all'
+    }
 
-    dispatch(fetchOffersByTech(curPath));
-
-
+    if ((curPath.length > 5 && curPath.substr(0, 5)==='offer')){
+        console.log('nie pobieram ofert')
+    }else {
+        try {
+            dispatch(fetchOffersByTech(curPath));
+        } catch (e) {
+            console.log(e)
+        }
+    }
     return (
 
         <main className={style.Content}>
 
             {
                 texts.map((text:TextObject)=> {
-                return <NavLink isActive={(_, {pathname}) => [`/${text.lang}`, "/all"].includes(pathname)}
+                return <NavLink isActive={(_, {pathname}) => [`/${text.lang}`, "/all", "/"].includes(pathname)}
                 activeClassName={style[text.lang]} key={text.lang} to={`/${text.lang}`}><FilterItem language={`${text.lang}`}>
                 <div onClick={() => dispatch(fetchOffersByTech(`${text.lang}`))}>{text.text}</div>
                 </FilterItem></NavLink>
@@ -61,7 +70,7 @@ const FilterBox = () => {
 
                 {
                 icons.map((icon: IconObject) => {
-                    return <NavLink isActive={(_, {pathname}) => [`/${icon.lang}`, "/all"].includes(pathname)}
+                    return <NavLink isActive={(_, {pathname}) => [`/${icon.lang}`, "/all", "/"].includes(pathname)}
                                     activeClassName={style[icon.lang]} key={`icon${icon.lang}`} to={`/${icon.lang}`}><FilterItem
                         language={`${icon.lang}`}>
                         <div onClick={() => dispatch(fetchOffersByTech(`${icon.lang}`))}>{icon.icon}</div>

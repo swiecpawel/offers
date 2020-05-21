@@ -21,17 +21,25 @@
     margin: 3px 3px;
     background-color: lightslategray;
 }
+.lang:hover{
+    box-shadow: 0 0 0px 3px #acc5dd;
+
+}
 .all .lang{
     background-color: red;
+    box-shadow: none;
 }
 .cpp .lang{
     background-color: yellow;
+    box-shadow: none;
 }
 .dev .lang{
      background-color: orange;
+    box-shadow: none;
  }
 .html .lang{
       background-color: blue;
+    box-shadow: none;
   }
 .php .lang{
        background-color: deepskyblue;
