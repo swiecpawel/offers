@@ -4,21 +4,91 @@
     margin: 10px 10px;
     height: 50px;
 }
-.lang{
+
+.lang {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: lighter;
+    font-size: small;
     border-radius: 25px;
-    height: 42px;
-    width: 42px;
+    height: 35px;
+    width: 35px;
     color: white;
     border: none;
     text-align: center;
     text-decoration: none;
-    background-color: gray;
     margin: 3px 3px;
+    background-color: lightslategray;
 }
-.lang:hover {
-    border-radius: 25px;
-    border: #7d82a8 solid 5px;
+.lang:hover{
+    box-shadow: 0 0 0px 3px #acc5dd;
+
 }
+.all .lang{
+    background-color: red;
+    box-shadow: none;
+}
+.cpp .lang{
+    background-color: yellow;
+    box-shadow: none;
+}
+.dev .lang{
+     background-color: orange;
+    box-shadow: none;
+ }
+.html .lang{
+      background-color: blue;
+    box-shadow: none;
+  }
+.php .lang{
+       background-color: deepskyblue;
+   }
+.javascript .lang{
+        background-color: green;
+}
+.ruby .lang{
+    background-color: deeppink;
+}
+.python .lang{
+    background-color: darkslategray;
+}
+.java .lang{
+    background-color: orangered;
+}
+.net .lang{
+    background-color: tomato;
+}
+.scala .lang{
+    background-color: darkviolet;
+}
+.mobile .lang{
+    background-color: salmon;
+}
+.testing .lang{
+    background-color: teal;
+}
+.UX .lang{
+    background-color: darkseagreen;
+}
+.PM .lang{
+    background-color: olivedrab;
+}
+.game .lang{
+     background-color: skyblue;
+}
+.bitchain .lang{
+    background-color: darkgoldenrod;
+}
+.security .lang{
+    background-color: deeppink;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+
+

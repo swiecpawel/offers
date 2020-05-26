@@ -1,0 +1,11 @@
+.buttonSubmit {
+    color: #773183;
+    border: 1px solid #773183;
+    background-color: #e187ff;
+}
+.errBox {
+    color: red;
+}
+.register {
+    color: red;
+}

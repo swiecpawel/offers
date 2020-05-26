@@ -1,17 +1,36 @@
-import React, {ReactNode} from "react";
-import style from './Offerts.module.css';
+import React from "react";
+import { OfferType, selectOffers } from '../../../slices/offer/offerSlice'
+import { useSelector } from 'react-redux';
+import style from './Offers.module.css'
+import Offer from './Offer/Offer'
+import {NavLink} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 
-const offers = (props: ReactNode) => (
-    <div className={style.Content}>
-        <ul>
-            <li>  Oferta 1 </li>
-            <li>  Oferta 2 </li>
-            <li>  Oferta 3 </li>
-            <li>  Oferta 4 </li>
-            <li>  Oferta 5 </li>
-        </ul>
-    </div>
 
-);
+const Offers = () => {
 
-export default offers;
+    const currentOffers: OfferType[] = useSelector(selectOffers);
+
+    return (
+
+       <main className={style.Content}>
+
+           { currentOffers.map((offer: OfferType) => {
+               return (
+                        <>
+                            <NavLink key={`NavLinkKey${offer._id}`} to={`/offer/${offer._id}`}>
+                               <Offer key={`${offer._id}`} language={`${offer.mainTechnology}`} title={`${offer.title}`}
+                                      logo={`logo`} city={`${offer.city}`} compName={`${offer.shortName}`}
+                                      salaryFrom={`${offer.salaryFrom}`} salaryTo={`${offer.salaryTo}`}
+                                      currency={`${offer.currency}`} technologies={offer.technology} date={offer.date}/>
+                            </NavLink>
+                       </>
+                       )
+               })
+           }
+        </main>
+    )
+};
+
+
+export default withRouter(Offers);

@@ -1,8 +1,8 @@
 import React from "react";
 
-const addOffer = () => (
+const AddOffer = () => (
 
     <input> Short Company name</input>
 );
 
-export default addOffer;
+export default AddOffer;

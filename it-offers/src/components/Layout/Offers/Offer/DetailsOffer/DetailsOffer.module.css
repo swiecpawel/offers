@@ -1,0 +1,12 @@
+.Content {
+    display: flex;
+    flex-direction: column;
+    height: 550px;
+    width: 60%;
+    padding: 1em;
+    margin: auto;
+    background-color: #f4f4f4;
+    overflow: auto;
+    direction: ltr;
+    text-align: left;
+}

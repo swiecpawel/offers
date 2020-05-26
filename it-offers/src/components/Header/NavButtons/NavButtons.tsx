@@ -5,10 +5,11 @@ import { FaRegNewspaper } from 'react-icons/fa';
 import { GiSuitcase } from 'react-icons/gi';
 import Logo from './Logo/Logo'
 import NavButton from "./NavButton/NavButton";
+import {Link} from "react-router-dom";
 
 const navButtons = () => (
     <div className={styles.Content}>
-        <Logo />
+        <Link to={'/'}><Logo /></Link>
         <NavButton name="Job offers"><MdWork/></NavButton>
         <NavButton name="Brand Stories"><MdDomain/></NavButton>
         <NavButton name="Just Geek IT"><FaRegNewspaper/></NavButton>

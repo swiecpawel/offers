@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const TechSchema = new Schema({tech: { type: String }, level: { type: String}});
+
 const OfferSchema = new Schema({
     shortName: { type: String, required: true },
     companyWebsite: { type: String, required: true },
@@ -13,10 +15,13 @@ const OfferSchema = new Schema({
     salaryFrom: { type: Number, required: true },
     salaryTo: { type: Number, required: true },
     currency: { type: String, required: true },
-    technology: {
-        tech: { type: String, required: true },
-        level: { type: Number, min: 1, max: 5 }
-    },
+    city: { type: String, required: true },
+    street: { type: String, required: true },
+    mainTechnology: { type: String, required: true },
+    technology: [{
+        tech: String,
+        level: Number
+    }],
     jobDescription : { type: String, required: true },
     date: { type: Date, default: Date.now }
 });
