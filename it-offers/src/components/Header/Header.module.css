@@ -4,7 +4,6 @@
     justify-content: space-between;
 }
 button {
-
     display: flex;
     justify-content: center;
     border-radius: 25px;
@@ -14,7 +13,6 @@ button {
     border: none;
     text-align: center;
     text-decoration: none;
-
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
@@ -26,12 +24,10 @@ button {
 }
 .LogBut:hover {
     background-color: #773183;
-
 }
 .LogBut:hover .roof {
     transform: rotate(180deg);
 }
-
 .PostJob{
     background-color: #FF4081;
 }
@@ -41,3 +37,4 @@ button {
 .roof {
     transition: 0.5s;
 }
+

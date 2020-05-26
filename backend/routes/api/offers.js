@@ -18,6 +18,8 @@ router.get('/', (req, res) => {
 // @desc Create A Post
 // @access Private
 router.post('/', auth, (req, res) => {
+
+
     const newOffer = new Offer({
         shortName: req.body.shortName,
         companyWebsite: req.body.companyWebsite,
@@ -30,10 +32,10 @@ router.post('/', auth, (req, res) => {
         salaryFrom: req.body.salaryFrom,
         salaryTo: req.body.salaryTo,
         currency: req.body.currency,
-        technology: {
-            tech: req.body.technology.tech,
-            level: req.body.technology.level,
-        },
+        city: req.body.city,
+        street: req.body.street,
+        mainTechnology: req.body.mainTechnology,
+        technology: req.body.technology,
         jobDescription : req.body.jobDescription,
     });
 
@@ -54,7 +56,7 @@ router.delete('/:id', auth, (req, res) => {
 // @access Public
 router.get('/tech/:techno', (req, res) => {
 
-    Offer.find({"technology.tech" : req.params.techno })
+    Offer.find({"mainTechnology" : req.params.techno })
         .sort({date: -1})
         .then(items => res.json(items))
 });

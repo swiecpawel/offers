@@ -1,8 +1,10 @@
-import style from "./DetailsOffer.module.css";
+
 import React from "react";
 import {useParams} from "react-router";
+import style from './DetailsOffer.module.css'
 import {OfferType, selectOffers} from "../../../../../slices/offer/offerSlice";
 import {useSelector} from "react-redux";
+
 
 const DetailsOffer = () => {
 
@@ -11,13 +13,20 @@ const DetailsOffer = () => {
 
     const currentOffers: OfferType[] = useSelector(selectOffers);
 
-    const offer: OfferType[] =  currentOffers.filter(offer => offer._id === offerID);
+    const myOffer: OfferType[] =  currentOffers.filter(offer => offer._id === offerID);
 
-    if(offer[0] !== undefined && offerID !== null){
+    const offer = myOffer[0];
+
+
+    if(offer !== undefined && offerID !== null){
     return (
     <main className={style.Content}>
-        {offer[0].salaryFrom} to {offerID}
-
+        <div className={style.Content}>
+        Company Name {offer.shortName}, Company size: {offer.companySize}, {offer.salaryFrom} to {offer.salaryTo}
+          <div>
+            {offer.jobDescription}
+            </div>
+        </div>
     </main>)
     } else {
         return <div>Incorrect Path</div>

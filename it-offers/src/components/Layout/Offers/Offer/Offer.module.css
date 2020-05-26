@@ -1,4 +1,3 @@
-
 .Content {
     display: flex;
     justify-content: space-between;
@@ -9,22 +8,45 @@
     margin: 10px;
     background-color: white;
     box-shadow: 1px 2px #a4a4a4;
-
 }
-
-.Content .html{
-    background-color: blue;
-    width: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-
+.SubLeft{
+    height: 80px;
+    display: flex;
+    justify-content: left;
 }
-
+.SubRight{
+    height: 80px;
+    display: flex;
+    justify-content: right;
+}
+.logo{
+    height: 60px;
+    width: 120px;
+    margin: 10px;
+    border: solid 1px blue;
+}
+.column80 {
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+}
+.row {
+    display: flex;
+    color: #a1a1a1;
+    font-size: 12px;
+}
+.title {
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
 .Content .cpp{
     background-color: yellow;
     width: 5px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+
 }
 .Content .dev{
     background-color: orange;
@@ -121,4 +143,64 @@
     width: 5px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+}
+.smallIcon{
+    margin-top: 10px;
+    margin-right: 5px;
+}
+.textItem {
+    margin-top: 10px;
+    margin-right: 5px;
+}
+.salary {
+    color: #1EC66C;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    margin-right: 5px;
+    padding: 0px 3px;
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+}
+.techBox {
+    border-radius: 25px;
+    border: 1px solid #a1a1a1;
+    height: 14px;
+    color: #a1a1a1;
+    text-align: center;
+    text-decoration: none;
+    font-size: 10px;
+    padding: 0px 10px;
+    margin-bottom: 15px;
+    margin-right: 5px;
+    transition: 0.5s;
+}
+.techBoxBlue {
+    border-radius: 25px;
+
+    border: 1px solid blue;
+    height: 14px;
+    color: blue;
+    background-color: #7879ff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 10px;
+    padding: 0px 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    transition: 0.5s;
+}
+.rowRightReverse {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left;
+
+}
+.rowRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
 }
