@@ -1,0 +1,97 @@
+.Content {
+  width: 40%;
+  text-align: center;
+}
+
+.Map{
+  height:550px;
+  width:50%;
+}
+.leaflet-div-icon{
+  width: 50px;
+  height: 50px;
+}
+.leaflet-marker-icon {
+  display: flex;
+  justify-items: center;
+  background-color: #ab47bc;
+}
+.row {
+  display: flex;
+}
+.logo {
+  height: 30px;
+  width: 40px;
+  margin: 3px;
+  border: solid 1px blue;
+  line-height: 30px;
+  text-align: center;
+}
+.myDivIcon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  border-radius: 35px;
+  line-height: 40px;
+  fill: white;
+}
+
+.cpp  {
+  fill: white;
+  background-image: linear-gradient(to right, #ffa922 , #ffc24a);
+}
+.dev  {
+  fill: white;
+  background-image: linear-gradient(to right, #ff6116 , #ff8441);
+
+}
+.html  {
+  background-image: linear-gradient(to right, blue , #4650ff);
+}
+.php  {
+  background-image: linear-gradient(to right, deepskyblue , #0dd1ff);
+}
+.javascript  {
+  background-image: linear-gradient(to right, green , #48804a);
+}
+.ruby  {
+  background-image: linear-gradient(to right, deeppink , #ff36a4);
+}
+.python  {
+  background-image: linear-gradient(to right, darkslategray , #487979);
+}
+.java  {
+  background-image: linear-gradient(to right, orangered , #ff793f);
+}
+.net  {
+  background-image: linear-gradient(to right, tomato , #ffa482);
+}
+.scala  {
+  background-image: linear-gradient(to right, darkviolet , #ab42d3);
+}
+.mobile  {
+  background-image: linear-gradient(to right, salmon , #faa99a);
+}
+.testing  {
+  background-image: linear-gradient(to right, teal , #337d80);
+}
+.UX  {
+  background-image: linear-gradient(to right, darkseagreen , #abe1ab);
+}
+.PM  {
+  background-image: linear-gradient(to right, olivedrab , #a4da36);
+}
+.game  {
+  background-image: linear-gradient(to right, #3f5deb , #6978eb);
+}
+.bitchain  {
+  background-image: linear-gradient(to right, darkgoldenrod , #b8892d);
+}
+.security  {
+  background-image: linear-gradient(to right, deeppink , #ff38a2);
+}
+

@@ -1,11 +1,32 @@
 .buttonSubmit {
-    color: #773183;
-    border: 1px solid #773183;
-    background-color: #e187ff;
+  color: #773183;
+  border: 1px solid #773183;
+  background-color: #e187ff;
 }
 .errBox {
-    color: red;
+  color: red;
 }
 .register {
-    color: red;
+  color: red;
+}
+.Content {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.logBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  margin: 20px;
+  min-width: 50px;
+}
+.imageBox{
+  display: flex;
+  width: 50%;
+  margin: 20px;
+  min-width: 400px;
+  background-color: dodgerblue;
+
 }

@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .App-logo {
@@ -32,16 +32,24 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(10px)
+    transform: translateY(10px);
   }
   100% {
-    transform: translateY(0px)
+    transform: translateY(0px);
   }
 }
+.leaflet-marker-icon {
+  display: flex;
+}
+button {
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
 
 /*.lang:hover {
   background-color: green;
   border-radius: 25px;
 
 }*/
-

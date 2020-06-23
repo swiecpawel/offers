@@ -1,17 +1,23 @@
 .NavButton {
-    display: flex;
-    flex-direction: row;
-    width: 140px;
-    height: 30px;
-    margin: 15px 10px;
-    color: darkgray;
-    cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  text-align: right;
+  width: 140px;
+  height: 30px;
+  margin: 10px 10px;
+  color: darkgray;
+  cursor: pointer;
 }
 .NavButton:hover {
-    color: #f48fb1;
+  color: #f48fb1;
 }
 
 .icon {
-    margin: 2px;
-    margin-right: 14px;
+  margin: 2px;
+  margin-right: 14px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  margin: 5px;
 }

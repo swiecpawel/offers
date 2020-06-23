@@ -37,6 +37,7 @@ router.post('/', auth, (req, res) => {
         mainTechnology: req.body.mainTechnology,
         technology: req.body.technology,
         jobDescription : req.body.jobDescription,
+        coordinates:req.body.coordinates
     });
 
     newOffer.save().then(offer => res.json(offer));

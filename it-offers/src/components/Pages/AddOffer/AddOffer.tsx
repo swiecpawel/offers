@@ -1,8 +1,7 @@
 import React from "react";
 
-const AddOffer = () => (
-
-    <input> Short Company name</input>
+const AddOffer: React.FC = () => (
+    <div>Add Offer Form</div>
 );
 
 export default AddOffer;

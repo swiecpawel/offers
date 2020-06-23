@@ -1,206 +1,204 @@
 .Content {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    height: 80px;
-    width: 100%;
-    border-radius: 5px;
-    margin: 10px;
-    background-color: white;
-    box-shadow: 1px 2px #a4a4a4;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  height: 80px;
+  width: 100%;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: white;
+  box-shadow: 1px 2px #a4a4a4;
 }
-.SubLeft{
-    height: 80px;
-    display: flex;
-    justify-content: left;
+.SubLeft {
+  height: 80px;
+  display: flex;
+  justify-content: left;
 }
-.SubRight{
-    height: 80px;
-    display: flex;
-    justify-content: right;
+.SubRight {
+  height: 80px;
+  display: flex;
+  justify-content: right;
 }
-.logo{
-    height: 60px;
-    width: 120px;
-    margin: 10px;
-    border: solid 1px blue;
+.logo {
+  height: 60px;
+  width: 120px;
+  margin: 10px;
+  border: solid 1px blue;
 }
 .column80 {
-    display: flex;
-    flex-direction: column;
-    height: 80px;
+  display: flex;
+  flex-direction: column;
+  height: 80px;
 }
 .row {
-    display: flex;
-    color: #a1a1a1;
-    font-size: 12px;
+  display: flex;
+  color: #a1a1a1;
+  font-size: 12px;
 }
 .title {
-    font-size: large;
-    font-weight: bold;
-    margin-bottom: 15px;
-    margin-top: 5px;
+  font-size: large;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 15px;
+  margin-top: 5px;
 }
-.Content .cpp{
-    background-color: yellow;
-    width: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-
+.Content .cpp {
+  background-color: #ffa922;
+  width: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-.Content .dev{
-    background-color: orange;
-    width: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.Content .dev {
+  background-color: #ff6116;
+  width: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-.Content .html{
-    background-color: blue;
-    width: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.Content .html {
+  background-color: blue;
+  width: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-.Content .php{
-    background-color: deepskyblue;
-    width: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.Content .php {
+  background-color: deepskyblue;
+  width: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-.Content .javascript{
-    background-color: green;
-    width: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.Content .javascript {
+  background-color: green;
+  width: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-.Content .ruby{
-    background-color: deeppink;
-    width: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.Content .ruby {
+  background-color: deeppink;
+  width: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-.Content .python{
-    background-color: darkslategray;
-    width: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.Content .python {
+  background-color: darkslategray;
+  width: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-.Content .java{
-    background-color: orangered;
-    width: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.Content .java {
+  background-color: orangered;
+  width: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-.Content .net{
-    background-color: tomato;
-    width: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.Content .net {
+  background-color: tomato;
+  width: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-.Content .scala{
-    background-color: darkviolet;
-    width: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.Content .scala {
+  background-color: darkviolet;
+  width: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-.Content .mobile{
-    background-color: salmon;
-    width: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.Content .mobile {
+  background-color: salmon;
+  width: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-.Content .testing{
-    background-color: teal;
-    width: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.Content .testing {
+  background-color: teal;
+  width: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-.Content .UX{
-    background-color: darkseagreen;
-    width: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.Content .UX {
+  background-color: darkseagreen;
+  width: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-.Content .PM{
-    background-color: olivedrab;
-    width: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.Content .PM {
+  background-color: olivedrab;
+  width: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-.Content .game{
-    background-color: skyblue;
-    width: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.Content .game {
+  background-color: #3f5deb;
+  width: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-.Content .bitchain{
-    background-color: darkgoldenrod;
-    width: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.Content .bitchain {
+  background-color: darkgoldenrod;
+  width: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-.Content .security{
-    background-color: deeppink;
-    width: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.Content .security {
+  background-color: deeppink;
+  width: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-.smallIcon{
-    margin-top: 10px;
-    margin-right: 5px;
+.smallIcon {
+  margin-top: 10px;
+  margin-right: 5px;
 }
 .textItem {
-    margin-top: 10px;
-    margin-right: 5px;
+  margin-top: 10px;
+  margin-right: 5px;
 }
 .salary {
-    color: #1EC66C;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    margin-right: 5px;
-    padding: 0px 3px;
-    text-align: right;
-    font-size: 18px;
-    font-weight: bold;
+  color: #1ec66c;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  margin-right: 5px;
+  padding: 0px 3px;
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
 }
 .techBox {
-    border-radius: 25px;
-    border: 1px solid #a1a1a1;
-    height: 14px;
-    color: #a1a1a1;
-    text-align: center;
-    text-decoration: none;
-    font-size: 10px;
-    padding: 0px 10px;
-    margin-bottom: 15px;
-    margin-right: 5px;
-    transition: 0.5s;
+  border-radius: 25px;
+  border: 1px solid #a1a1a1;
+  height: 14px;
+  color: #a1a1a1;
+  text-align: center;
+  text-decoration: none;
+  font-size: 10px;
+  padding: 0px 10px;
+  margin-bottom: 15px;
+  margin-right: 5px;
+  transition: 0.5s;
 }
 .techBoxBlue {
-    border-radius: 25px;
+  border-radius: 25px;
 
-    border: 1px solid blue;
-    height: 14px;
-    color: blue;
-    background-color: #7879ff;
-    text-align: center;
-    text-decoration: none;
-    font-size: 10px;
-    padding: 0px 10px;
-    margin-top: 5px;
-    margin-right: 5px;
-    margin-bottom: 15px;
-    transition: 0.5s;
+  border: 1px solid blue;
+  height: 14px;
+  color: blue;
+  background-color: #7879ff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 10px;
+  padding: 0px 10px;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-bottom: 15px;
+  transition: 0.5s;
 }
 .rowRightReverse {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: left;
-
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: left;
 }
 .rowRight {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }

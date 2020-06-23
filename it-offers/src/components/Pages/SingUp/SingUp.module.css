@@ -1,8 +1,13 @@
 .buttonSubmit {
-    color: #773183;
-    border: 1px solid #773183;
-    background-color: #e187ff;
+  color: #773183;
+  border: 1px solid #773183;
+  background-color: #e187ff;
 }
 .errBox {
-    color: red;
+  color: red;
+}
+.Content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }

@@ -23,6 +23,7 @@ const OfferSchema = new Schema({
         level: Number
     }],
     jobDescription : { type: String, required: true },
+    coordinates: { type: [Number, Number]},
     date: { type: Date, default: Date.now }
 });
 
