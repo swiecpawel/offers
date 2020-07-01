@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link, NavLink, useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { authUser } from "../../../slices/auth/authSlice";
 import style from "./SingIn.module.css";
 import Header from "../../Header/Header";

@@ -33,8 +33,8 @@ const offer: React.FC<PropsOffer> = ({
   technologies,
   date,
 }) => {
-  const techs = technologies.slice(0, 3).map((t) => {
-    return <div className={style.techBox}>{t.tech}</div>;
+  const techs = technologies.slice(0, 3).map((t, index) => {
+    return <div key={`${t.tech}${index}`+ Math.random()} className={style.techBox}>{t.tech}</div>;
   });
   const separateThousands = (x: String) => {
     return x.replace(/\B(?=(\d{3})+(?!\d))/g, " ");

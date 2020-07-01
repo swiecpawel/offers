@@ -15,7 +15,7 @@ function App() {
 
   if (location.pathname === "/sing_in") return <SingIn />;
   else if (location.pathname === "/sing_up") return <SingUp />;
-  else if (location.pathname === "/add-offer-form") return <AddOffer />;
+  else if (location.pathname === "/add-offer-form" || location.pathname ==="/offer/add-offer-form") return <AddOffer />;
   else {
     return (
       <>

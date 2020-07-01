@@ -1,38 +1,15 @@
-import React, {CElement} from "react";
+import React from "react";
 import style from "./MyMap.module.css";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
-import {DivIcon, DivIconOptions, LatLngTuple} from "leaflet";
+import { LatLngTuple } from "leaflet";
 import L from "leaflet";
 import { OfferType, selectOffers } from "../../../slices/offer/offerSlice";
 import { useSelector } from "react-redux";
 
-
 const defaultLatLng: LatLngTuple = [52.36322, 19.13884];
-const position: LatLngTuple = [54.376118, 18.612625];
-const position2: LatLngTuple = [54.376118, 21.612625];
-
 const zoom: number = 6;
-
-const techIcons = {};
-
-
-
-const divIcon = L.divIcon({
-  className: `${style.myDivIcon}`,
-  html: `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 32 32">
-<path d="M10.372 13.069h-3.967l-1.715 8.684h2.037l0.429-2.251h1.93c1.822 0.107 3.86-1.394 3.86-3.967 0-1.501-0.858-2.359-2.573-2.466zM8.871 17.894h-1.287l0.536-3.216h1.394c0.75 0 1.287 0.322 1.287 0.965-0.107 1.823-0.965 2.144-1.93 2.251zM17.555 13.069h-1.93l0.429-2.251h-2.037l-1.715 8.684h2.037l0.965-4.824h1.608c0.751 0 0.751 0.322 0.643 0.858l-0.75 3.967h2.144l0.75-4.396c0.214-1.072-0.429-1.93-2.144-2.037zM24.738 13.069h-3.967l-1.715 8.684h2.037l0.429-2.251h1.93c1.823 0.107 3.86-1.394 3.86-3.967 0-1.501-0.858-2.359-2.573-2.466zM23.237 17.894h-1.287l0.536-3.216h1.394c0.751 0 1.287 0.322 1.287 0.965-0.107 1.823-0.965 2.144-1.93 2.251z"></path>
-</svg>`,
-  iconSize: [25, 25],
-});
-
-interface IconsInterface {
-
-}
-
 const MyMap: React.FC = () => {
   const currentOffers: OfferType[] = useSelector(selectOffers);
-
-
 
   const icons: Object | any = {
     cpp: L.divIcon({
@@ -129,16 +106,25 @@ const MyMap: React.FC = () => {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       ></TileLayer>
 
-      {
-        currentOffers.map((offer: OfferType) => (
-            <Marker position={offer.coordinates} icon={icons[`${offer.mainTechnology}`]} onMouseOver={(e: any) => {
-              e.target.openPopup(); }} onMouseOut={(e: any) => {e.target.closePopup();}} >
-              <Popup>
-                <div className={style.row}><div className={style.logo}>LOGO</div> {offer.shortName} <br /> {offer.title}.</div>
-              </Popup>
-            </Marker>
-            ))
-      }
+      {currentOffers.map((offer: OfferType) => (
+        <Marker
+          position={offer.coordinates}
+          icon={icons[`${offer.mainTechnology}`]}
+          onMouseOver={(e: any) => {
+            e.target.openPopup();
+          }}
+          onMouseOut={(e: any) => {
+            e.target.closePopup();
+          }}
+        >
+          <Popup>
+            <div className={style.row}>
+              <div className={style.logo}>LOGO</div> {offer.shortName} <br />{" "}
+              {offer.title}.
+            </div>
+          </Popup>
+        </Marker>
+      ))}
     </Map>
   );
 };

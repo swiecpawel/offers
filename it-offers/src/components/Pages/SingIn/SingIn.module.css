@@ -21,6 +21,7 @@
   width: 50%;
   margin: 20px;
   min-width: 50px;
+  height: 550px;
 }
 .imageBox{
   display: flex;

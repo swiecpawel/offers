@@ -3,12 +3,13 @@ import axios from "axios";
 import { RootState } from "../../app/store";
 import {LatLngTuple} from "leaflet";
 
+
 export interface OffersType {
   offers: Array<OfferType>;
 }
 
 export interface OfferType {
-  _id: String;
+  _id?: String;
   coordinates: LatLngTuple;
   shortName: String;
   companyWebsite: String;
@@ -26,6 +27,7 @@ export interface OfferType {
   mainTechnology: String;
   technology: [
     {
+      _id?: String;
       tech: String;
       level: Number;
     }
@@ -38,11 +40,32 @@ const initialState: OffersType = {
   offers: [],
 };
 
+
+
+export const addNewOffer = createAsyncThunk(
+    "offer/addNewOffer",
+    // Declare the type your function argument here:
+
+    async (offerObject: OfferType) => {
+        const headers = {
+            'Content-Type': 'application/json',
+            'x-auth-token': `${localStorage.getItem("token")}`
+        };
+      const response = await axios.post(
+          "http://localhost:5000/api/offers",
+          offerObject, {headers: headers}
+      );
+
+      return await response.data.offer;
+    }
+);
+
 export const fetchAllOffers = createAsyncThunk(
   "offers/fetchAllOffers",
   // Declare the type your function argument here:
   async () => {
     const response = await axios.get("http://localhost:5000/api/offers/");
+    console.log(response.data);
     return (await response.data) as OfferType[];
   }
 );
@@ -78,6 +101,12 @@ export const offersSlice = createSlice({
       (state, action: PayloadAction<OfferType[]>) => {
         state.offers = action.payload;
       }
+    );
+    builder.addCase(
+        addNewOffer.fulfilled,
+        (state, action: PayloadAction<OfferType[]>) => {
+          state.offers = action.payload;
+        }
     );
   },
 });

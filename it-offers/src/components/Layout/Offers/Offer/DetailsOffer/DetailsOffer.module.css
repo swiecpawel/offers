@@ -6,18 +6,33 @@
   margin: auto;
   direction: ltr;
   text-align: left;
+  overflow: auto;
   background-color: #F3F6F8;
-
+  padding: 1em;
 }
+
+.noPath {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.offerDetail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
 .descriptionTitle {
   display: flex;
   justify-content: left;
   align-items: center;
   background-color: white;
-  padding-left: 4%;
-  margin-right: 2%;
-  margin-left: 2%;
-  margin-bottom: 4px;
+  width: 100%;
+  margin: 5px 0px;
   border-radius: 4px 4px 0px 0px;
   font-size: large;
   font-weight: bold;
@@ -27,13 +42,16 @@
   justify-content: center;
   background-color: white;
   padding-left: 4%;
+  margin-bottom: 20px;
   border-radius: 0px 0px 10px 10px;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 2px 0px, rgba(0, 0, 0, 0.06) 0px 1px 5px 0px;
 }
 .headOffer {
   display: flex;
-  height: 215px;
-  margin-bottom: 60px;
+  height: 100%;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin-bottom: 40px;
   border-radius: 0px 0px 4px 4px;
 }
 .headerContent {
@@ -41,7 +59,6 @@
   justify-content: left;
   align-items: center;
   padding: 20px;
-  width: 100%;
 }
 .logo {
   display: flex;
@@ -101,9 +118,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 60px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 40px;
 }
 .box {
   display: flex;
@@ -129,7 +146,6 @@
 }
 
 .cpp  {
-  display: flex;
   fill: white;
   background-image: url("../../../../../assets/header_background.0ef18c97.png"), linear-gradient(30deg, #ffa922 , #ffc24a);
   height: 215px;
@@ -215,5 +231,19 @@
   background-image: url("../../../../../assets/header_background.0ef18c97.png"), linear-gradient(30deg, deeppink , #ff38a2);
   height: 215px;
   width: 100%;
+}
+.imageNO {
+  width: 50%;
+}
+.back {
+  cursor: pointer;
+}
+.technologies {
+  display: flex;
+  justify-content: left;
+  background-color: white;
+  padding-left: 4%;
+  margin-bottom: 20px;
+  border-radius: 0px 0px 10px 10px;
 }
 
