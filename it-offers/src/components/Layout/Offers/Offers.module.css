@@ -1,15 +1,15 @@
 .Content {
-    height: 550px;
-    width: 60%;
-    padding: 1em;
-    margin: auto;
-    background-color: #f4f4f4;
-    overflow: auto;
-    direction: ltr;
-    text-align: left;
+  height: 550px;
+  width: 50%;
+  padding: 1em;
+  margin: auto;
+  background-color: #f4f4f4;
+  overflow: auto;
+  direction: ltr;
+  text-align: left;
 }
 
 .offerItem {
-    display: flex;
-    background-color: lightslategray;
+  display: flex;
+  background-color: lightslategray;
 }
