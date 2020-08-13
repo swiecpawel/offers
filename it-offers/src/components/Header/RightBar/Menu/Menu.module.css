@@ -1,5 +1,6 @@
 .Content {
   display: flex;
+  align-items: center;
   margin: auto;
   height: 40px;
 }

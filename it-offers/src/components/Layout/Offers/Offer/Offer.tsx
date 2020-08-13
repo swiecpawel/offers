@@ -1,14 +1,17 @@
 import React from "react";
 import style from "./Offer.module.css";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { MdDomain } from "react-icons/md";
+import {FaMapMarkerAlt} from "react-icons/fa";
+import {MdDomain} from "react-icons/md";
+import {findById} from "../../../../slices/oneOfferSlice/oneOfferSlice";
+import {useDispatch} from "react-redux";
 
 export interface TechsType {
   tech: String;
-  level: Number;
+  level: Number | String;
 }
 
 interface PropsOffer {
+  offerId: String;
   language: String;
   title: String;
   logo: String;
@@ -21,7 +24,8 @@ interface PropsOffer {
   date: String;
 }
 
-const offer: React.FC<PropsOffer> = ({
+const Offer: React.FC<PropsOffer> = ({
+  offerId,
   language,
   title,
   logo,
@@ -33,8 +37,13 @@ const offer: React.FC<PropsOffer> = ({
   technologies,
   date,
 }) => {
+  const dispatch = useDispatch();
   const techs = technologies.slice(0, 3).map((t, index) => {
-    return <div key={`${t.tech}${index}`+ Math.random()} className={style.techBox}>{t.tech}</div>;
+    return (
+      <div key={`${t.tech}${index}` + Math.random()} className={style.techBox} >
+        {t.tech}
+      </div>
+    );
   });
   const separateThousands = (x: String) => {
     return x.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -67,7 +76,7 @@ const offer: React.FC<PropsOffer> = ({
   };
 
   return (
-    <main className={style.Content}>
+    <main className={style.Content} onClick={() => dispatch(findById(`${offerId}`))}>
       <div className={style.SubLeft}>
         <div className={style[`${language}`]}></div>
         <div className={style.logo}>{logo}</div>
@@ -102,4 +111,4 @@ const offer: React.FC<PropsOffer> = ({
   );
 };
 
-export default offer;
+export default Offer;

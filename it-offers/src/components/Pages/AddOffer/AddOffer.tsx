@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Formik, Form } from "formik";
+import { FieldArray, Form, Formik } from "formik";
 import * as Yup from "yup";
 import Header from "../../Header/Header";
 import style from "./AddOffer.module.css";
@@ -9,12 +9,16 @@ import { addNewOffer, OfferType } from "../../../slices/offer/offerSlice";
 import FormikField from "./FormikField/FormikField";
 import FormikSelect from "./FormikSelect/FormikSelect";
 import { useDispatch } from "react-redux";
-
+import { useHistory } from "react-router";
+import { Autocomplete } from "@material-ui/lab";
+import { TextField } from "@material-ui/core";
+import TechOption from "./TechOption/TechOption";
+import FormikRateField from "./FormikRateField/FormikRateField";
 
 const ValidationSchema = Yup.object().shape({
   shortName: Yup.string().required("This field is required"),
   companyWebsite: Yup.string().required("This field is required"),
-  companySize: Yup.string().required("This field is required"),
+  companySize: Yup.number().required("This field is required"),
   experienceLevel: Yup.string().required("This field is required"),
   title: Yup.string().required("This field is required"),
   city: Yup.string().required("This field is required"),
@@ -23,34 +27,42 @@ const ValidationSchema = Yup.object().shape({
   jobDescription: Yup.string().required("This field is required"),
 });
 
+const technologiesOtions: Array<String> = [
+  "Java",
+  "C/C++",
+  "HTML5",
+  "CSS3",
+  "JavaScript",
+];
+
 const AddOffer: React.FC = () => {
   const dispatch = useDispatch();
-
+  const history = useHistory();
   const handleSubmit = (values: OfferType) => {
-          try {
-              console.log(`Submit: ${JSON.stringify(values)}`);
-              dispatch(addNewOffer(values));
-          } catch (e) {
-              console.log(e);
-          }
+    try {
+      console.log(`Submit: ${JSON.stringify(values)}`);
+      dispatch(addNewOffer(values));
+      history.push("/");
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (
     <>
       <Header />
-
       <Formik
         initialValues={{
           shortName: "",
           companyWebsite: "",
           companyType: "",
-          companySize: 0,
+          companySize: "",
           companyIndustry: "",
           experienceLevel: "",
           title: "",
           employmentType: "",
-          salaryFrom: 0,
-          salaryTo: 0,
+          salaryFrom: "",
+          salaryTo: "",
           currency: "",
           city: "",
           street: "",
@@ -58,34 +70,20 @@ const AddOffer: React.FC = () => {
           technology: [
             {
               tech: "",
-              level: 1,
+              level: "",
             },
           ],
           jobDescription: "",
           coordinates: [51.12, 12.12],
           date: "",
+          example: [],
         }}
         onSubmit={handleSubmit}
         validationSchema={ValidationSchema}
       >
-        {({ errors, handleReset, dirty, isValid, touched }) => (
+        {({ values, errors, handleReset, dirty, isValid, touched }) => (
           <Form>
             <div className={style.Content}>
-              <div className={style.ProgressBar}>
-                <div className={style.circleActive}>1</div>
-                <div className={style.titleActive}>Create</div>
-                <div className={style.line}></div>
-                <div className={style.circle}>2</div>
-                <div className={style.title}>Verify</div>
-                <div className={style.line}></div>
-                <div className={style.circle}>3</div>
-                <div className={style.title}>Payment</div>
-                <div className={style.line}></div>
-                <div className={style.circle}>
-                  <TiTick />
-                </div>
-                <div className={style.title}>Publish</div>
-              </div>
               <div className={style.Form}>
                 <div className={style.strip}>
                   <div className={style.logoBox}>
@@ -110,7 +108,7 @@ const AddOffer: React.FC = () => {
                     <FormikField
                       name="companySize"
                       label="Company Size"
-                      err={errors.companySize}
+                      err={errors.companySize && touched.companySize}
                     />
                   </div>
 
@@ -124,10 +122,18 @@ const AddOffer: React.FC = () => {
                       label="companyType"
                       opt="Choose Type"
                     />
-                    <FormikField
+                    <FormikSelect
                       name="companyIndustry"
-                      label="companyIndustry"
-                      err={errors.companyIndustry && touched.companyIndustry}
+                      items={[
+                        { label: "E-commerce", value: "B2B" },
+                        { label: "IoT", value: "Iot" },
+                        { label: "Military", value: "Military" },
+                        { label: "Logistic", value: "Logistic" },
+                        { label: "Travel", value: "Travel" },
+                        { label: "Other", value: "Other" },
+                      ]}
+                      label="employmentType"
+                      opt="Choose employment Type"
                     />
                   </div>
                 </div>
@@ -151,7 +157,7 @@ const AddOffer: React.FC = () => {
                       items={[
                         { label: "Junior", value: 1 },
                         { label: "Mid", value: 2 },
-                        { label: "Mid", value: 3 },
+                        { label: "Senior", value: 3 },
                       ]}
                       label="Experience Level"
                       opt="Choose Exp Lvl "
@@ -163,6 +169,19 @@ const AddOffer: React.FC = () => {
                     />
                   </div>
                   <div className={style.inputBox}>
+                    <FormikSelect
+                      name="employmentType"
+                      items={[
+                        { label: "B2B", value: "B2B" },
+                        { label: "Permanent", value: "Permanent" },
+                        {
+                          label: "Mandate Contract",
+                          value: "Mandate Contract",
+                        },
+                      ]}
+                      label="employmentType"
+                      opt="Choose employment Type"
+                    />
                     <FormikSelect
                       name="currency"
                       items={[
@@ -180,31 +199,58 @@ const AddOffer: React.FC = () => {
                       label="Currency"
                       opt="Choose currency"
                     />
-                    <FormikSelect
-                      name="employmentType"
-                      items={[
-                        { label: "B2B", value: "B2B" },
-                        { label: "Permanent", value: "Permanent" },
-                        {
-                          label: "Mandate Contract",
-                          value: "Mandate Contract",
-                        },
-                      ]}
-                      label="employmentType"
-                      opt="Choose employment Type"
-                    />
                   </div>
                 </div>
-                <div className={style.stripe}>
-                  <div className={style.offerTitle}>Tech Stack</div>
-                </div>
+                <div className={style.stripe}></div>
                 <div className={style.stripe}>
                   <div className={style.offerTitle}>Job description</div>
                   <FormikField
                     name="jobDescription"
                     label="Job Description"
-                    err={false}
+                    err={errors.jobDescription && touched.jobDescription}
                     variant="outlined"
+                    multiline={true}
+                  />
+                </div>
+
+                <div className={style.stripTech}>
+                  <FieldArray
+                    name="technology"
+                    render={(arrayHelpers) => (
+                      <div className={style.stripTech}>
+                        {values.technology.map((t, index) => (
+                          <div key={index}>
+                            <FormikField
+                              name={`technology[${index}].tech`}
+                              label="Technology"
+                              err={false}
+                            />
+                            <FormikRateField
+                              name={`technology[${index}].level`}
+                              label={"Add"}
+                              err={false}
+                            />
+
+                            <button
+                              className={style.remove}
+                              type="button"
+                              onClick={() => arrayHelpers.remove(index)}
+                            >
+                              x
+                            </button>
+                          </div>
+                        ))}
+                        <button
+                          className={style.add}
+                          type="button"
+                          onClick={() =>
+                            arrayHelpers.push({ tech: "", level: "" })
+                          }
+                        >
+                          +
+                        </button>
+                      </div>
+                    )}
                   />
                 </div>
                 <div className={style.stripe}>
@@ -212,13 +258,17 @@ const AddOffer: React.FC = () => {
                 </div>
                 <div className={style.stripeLeft}>
                   <div className={style.inputBox}>
-                    <FormikField name="city" label="City" err={errors.city} />
+                    <FormikField
+                      name="city"
+                      label="City"
+                      err={errors.city && touched.city}
+                    />
                   </div>
                   <div className={style.inputBox}>
                     <FormikField
                       name="street"
                       label="Street"
-                      err={errors.street}
+                      err={errors.street && touched.street}
                     />
                   </div>
                 </div>
@@ -230,6 +280,8 @@ const AddOffer: React.FC = () => {
                       items={[
                         { label: "C++", value: "cpp" },
                         { label: "Java", value: "java" },
+                        { label: "PM", value: "PM" },
+                        { label: "HTML", value: "html" },
                       ]}
                       label="mainTechnology"
                       opt="Choose Main Tech"
@@ -238,11 +290,33 @@ const AddOffer: React.FC = () => {
                 </div>
               </div>
             </div>
+            <div>
+              <Autocomplete
+                multiple
+                id="tags-filled"
+                options={technologiesOtions.map((T) => T)}
+                defaultValue={[technologiesOtions[1]]}
+                freeSolo
+                renderTags={(value, getTagProps) =>
+                  value.map((option, index) => (
+                    <TechOption tech={option} />
 
-            <br />
-            <br />
-            <br />
-            <br />
+                    /*<Chip variant="outlined" label={option} {...getTagProps({ index })} />*/
+                  ))
+                }
+                renderInput={(params) => (
+                  <>
+                    <TextField
+                      {...params}
+                      variant="filled"
+                      label="freeSolo"
+                      placeholder="Add Technology"
+                    />
+                  </>
+                )}
+              />
+            </div>
+
             <div className={style.strip}>
               <div className={style.buttons}>
                 <button disabled={!dirty || !isValid} type="submit">

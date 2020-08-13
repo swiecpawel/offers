@@ -2,7 +2,7 @@ import React from "react";
 import style from "./Layout.module.css";
 import Map from "./Map/MyMap";
 import Offers from "./Offers/Offers";
-import { Route, Switch, useLocation } from "react-router";
+import {Route, Switch, useLocation} from "react-router";
 import DetailsOffer from "./Offers/Offer/DetailsOffer/DetailsOffer";
 
 const Layout: React.FunctionComponent = () => {

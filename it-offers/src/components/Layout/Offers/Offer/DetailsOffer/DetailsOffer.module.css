@@ -7,7 +7,7 @@
   direction: ltr;
   text-align: left;
   overflow: auto;
-  background-color: #F3F6F8;
+  background-color: #f3f6f8;
   padding: 1em;
 }
 
@@ -23,42 +23,47 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 20px;
 }
 
-.descriptionTitle {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  background-color: white;
-  width: 100%;
-  margin: 5px 0px;
-  border-radius: 4px 4px 0px 0px;
-  font-size: large;
-  font-weight: bold;
+.section {
+  box-shadow: rgba(225, 232, 240, 0.7) 0px 2px 18px 10px;
+  margin-top: 40px;
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  overflow: visible;
+}
+
+.descriptionTitle
+{
+  color: rgb(55, 71, 79);
+  font-weight: 600;
+  font-size: 18px;
+  border-bottom: 2px solid rgb(243, 246, 248);
+  padding: 12px 20px;
 }
 .description {
-  display: flex;
-  justify-content: center;
-  background-color: white;
-  padding-left: 4%;
-  margin-bottom: 20px;
-  border-radius: 0px 0px 10px 10px;
+  padding: 20px;
+}
+.headOffer
+{
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 2px 0px, rgba(0, 0, 0, 0.06) 0px 1px 5px 0px;
-}
-.headOffer {
   display: flex;
-  height: 100%;
-  padding-left: 2%;
-  padding-right: 2%;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 4px;
   margin-bottom: 40px;
-  border-radius: 0px 0px 4px 4px;
 }
+
 .headerContent {
   display: flex;
   justify-content: left;
   align-items: center;
-  padding: 20px;
+  margin: 20px;
 }
 .logo {
   display: flex;
@@ -92,7 +97,7 @@
   margin-left: 100px;
   margin-right: 100px;
 }
-.circle {
+/*.circle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,38 +106,25 @@
   background-color: white;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 2px 0px, rgba(0, 0, 0, 0.06) 0px 1px 5px 0px;
-}
+}*/
 
-.circle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 35px;
-  height: 35px;
-  background-color: white;
-  border-radius: 50%;
-  transform: translate(0%, -50%);
-}
+
 
 .boxes {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
   justify-content: space-between;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-bottom: 40px;
+  transform: translateY(-50%);
+  width: 100%;
+  margin-top: 60px;
+  padding: 0 0;
 }
-.box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  width: 120px;
-  height: 70px;
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 2px 0px, rgba(0, 0, 0, 0.06) 0px 1px 5px 0px;
-  border-radius: 4px;
+
+.rating {
+  height: 20px;
 }
+
 .subtitle1 {
   font-size: large;
 }
@@ -140,95 +132,108 @@
   font-size: larger;
   font-weight: bold;
 }
-.smallTitle {
-  font-size: x-small;
-  color: grey;
-}
 
-.cpp  {
-  fill: white;
-  background-image: url("../../../../../assets/header_background.0ef18c97.png"), linear-gradient(30deg, #ffa922 , #ffc24a);
+
+
+.cpp {
+  background-image: url("../../../../../assets/header_background.0ef18c97.png"),
+    linear-gradient(30deg, #ffa922, #ffc24a);
   height: 215px;
   width: 100%;
 }
-.dev  {
-  fill: white;
-  background-image: url("../../../../../assets/header_background.0ef18c97.png"), linear-gradient(30deg, #ff6116 , #ff8441);
+.dev {
+  background-image: url("../../../../../assets/header_background.0ef18c97.png"),
+    linear-gradient(30deg, #ff6116, #ff8441);
   height: 215px;
   width: 100%;
 }
-.html  {
-  background-image: url("../../../../../assets/header_background.0ef18c97.png"), linear-gradient(30deg, blue , #4650ff);
+.html {
+  background-image: url("../../../../../assets/header_background.0ef18c97.png"),
+    linear-gradient(30deg, blue, #4650ff);
   height: 215px;
   width: 100%;
 }
-.php  {
-  background-image: url("../../../../../assets/header_background.0ef18c97.png"), linear-gradient(30deg, deepskyblue , #0dd1ff);
+.php {
+  background-image: url("../../../../../assets/header_background.0ef18c97.png"),
+    linear-gradient(30deg, deepskyblue, #0dd1ff);
   height: 215px;
   width: 100%;
 }
-.javascript  {
-  background-image: url("../../../../../assets/header_background.0ef18c97.png"), linear-gradient(30deg, green , #48804a);
+.javascript {
+  background-image: url("../../../../../assets/header_background.0ef18c97.png"),
+    linear-gradient(30deg, green, #48804a);
   height: 215px;
   width: 100%;
 }
-.ruby  {
-  background-image: url("../../../../../assets/header_background.0ef18c97.png"), linear-gradient(30deg, deeppink , #ff36a4);
+.ruby {
+  background-image: url("../../../../../assets/header_background.0ef18c97.png"),
+    linear-gradient(30deg, deeppink, #ff36a4);
   height: 215px;
   width: 100%;
 }
-.python  {
-  background-image: url("../../../../../assets/header_background.0ef18c97.png"), linear-gradient(30deg, darkslategray , #487979);
+.python {
+  background-image: url("../../../../../assets/header_background.0ef18c97.png"),
+    linear-gradient(30deg, darkslategray, #487979);
   height: 215px;
   width: 100%;
 }
-.java  {
-  background-image: url("../../../../../assets/header_background.0ef18c97.png"), linear-gradient(30deg, orangered , #ff793f);
+.java {
+  background-image: url("../../../../../assets/header_background.0ef18c97.png"),
+    linear-gradient(30deg, orangered, #ff793f);
   height: 215px;
   width: 100%;
 }
-.net  {
-  background-image: url("../../../../../assets/header_background.0ef18c97.png"), linear-gradient(30deg, tomato , #ffa482);
+.net {
+  background-image: url("../../../../../assets/header_background.0ef18c97.png"),
+    linear-gradient(30deg, tomato, #ffa482);
   height: 215px;
   width: 100%;
 }
-.scala  {
-  background-image: url("../../../../../assets/header_background.0ef18c97.png"), linear-gradient(30deg, darkviolet , #ab42d3);
+.scala {
+  background-image: url("../../../../../assets/header_background.0ef18c97.png"),
+    linear-gradient(30deg, darkviolet, #ab42d3);
   height: 215px;
   width: 100%;
 }
-.mobile  {
-  background-image: url("../../../../../assets/header_background.0ef18c97.png"), linear-gradient(30deg, salmon , #faa99a);
+.mobile {
+  background-image: url("../../../../../assets/header_background.0ef18c97.png"),
+    linear-gradient(30deg, salmon, #faa99a);
   height: 215px;
   width: 100%;
 }
-.testing  {
-  background-image: url("../../../../../assets/header_background.0ef18c97.png"), linear-gradient(30deg, teal , #337d80);
+.testing {
+  background-image: url("../../../../../assets/header_background.0ef18c97.png"),
+    linear-gradient(30deg, teal, #337d80);
   height: 215px;
   width: 100%;
 }
-.UX  {
-  background-image: url("../../../../../assets/header_background.0ef18c97.png"), linear-gradient(30deg, darkseagreen , #abe1ab);
+.UX {
+  background-image: url("../../../../../assets/header_background.0ef18c97.png"),
+    linear-gradient(30deg, darkseagreen, #abe1ab);
   height: 215px;
   width: 100%;
 }
-.PM  {
-  background-image: url("../../../../../assets/header_background.0ef18c97.png"), linear-gradient(30deg, olivedrab , #a4da36);
+.PM {
+  background-image: url("../../../../../assets/header_background.0ef18c97.png"),
+    linear-gradient(30deg, olivedrab, #a4da36);
   height: 215px;
   width: 100%;
 }
-.game  {
-  background-image: url("../../../../../assets/header_background.0ef18c97.png"), linear-gradient(30deg, #3f5deb , #6978eb);
+.game {
+  background-image: url("../../../../../assets/header_background.0ef18c97.png"),
+    linear-gradient(30deg, #3f5deb, #6978eb);
   height: 215px;
   width: 100%;
 }
-.bitchain  {
-  background-image: url("../../../../../assets/header_background.0ef18c97.png"), linear-gradient(30deg, darkgoldenrod , #b8892d);
+.bitchain {
+  background-image: url("../../../../../assets/header_background.0ef18c97.png"),
+    linear-gradient(30deg, darkgoldenrod, #b8892d);
   height: 215px;
   width: 100%;
 }
-.security  {
-  background-image: url("../../../../../assets/header_background.0ef18c97.png"), linear-gradient(30deg, deeppink , #ff38a2);
+.security {
+  background-image: url("../../../../../assets/header_background.0ef18c97.png"),
+    linear-gradient(30deg, deeppink, #ff38a2);
   height: 215px;
   width: 100%;
 }
@@ -246,4 +251,3 @@
   margin-bottom: 20px;
   border-radius: 0px 0px 10px 10px;
 }
-

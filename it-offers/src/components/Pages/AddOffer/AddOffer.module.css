@@ -1,155 +1,166 @@
 .Content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #F3F6F8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f3f6f8;
 }
 .Form {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    background-color: white;
-    box-shadow: 0 2px 18px 10px rgba(225,232,240,0.7);
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  background-color: white;
+  box-shadow: 0 2px 18px 10px rgba(225, 232, 240, 0.7);
 }
 .ProgressBar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 40px;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
 }
 .circleActive {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px;
-    background-color: #FF4081;
-    color: white;
-    text-align: center;
-    height: 28px;
-    width: 28px;
-    border-radius: 50%;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  background-color: #ff4081;
+  color: white;
+  text-align: center;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
 }
 
 .circle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    margin: 5px;
-    background-color: rgba(0,0,0,0.3);
-    text-align: center;
-    height: 28px;
-    width: 28px;
-    border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
 }
 .line {
-    height: 1px;
-    width: 124px;
-    margin: 7px;
-    border-bottom: solid 1px rgba(0,0,0,0.1);
+  height: 1px;
+  width: 124px;
+  margin: 7px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
 }
 
 .root {
-
 }
 
 .input {
-    color: green;
-    border-color: #1ec66c;
+  color: green;
+  border-color: #1ec66c;
 }
 
 .input:focus {
-    color: green;
-    border-color: #1ec66c;
+  color: green;
+  border-color: #1ec66c;
 }
 
 .title {
-    margin: 5px;
-    color: rgba(0,0,0,0.3);;
+  margin: 5px;
+  color: rgba(0, 0, 0, 0.3);
 }
 .titleActive {
-    font-weight: bolder;
-    margin: 5px;
+  font-weight: bolder;
+  margin: 5px;
 }
 .logoBox {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 30%;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  align-items: center;
 }
 .logoBox:hover {
-    color: #9c27b0;
+  color: #9c27b0;
 }
 
 .logo {
-    color: #37474F;
+  color: #37474f;
 }
 .logo:hover {
-    color: #9c27b0;
+  color: #9c27b0;
 }
 .inputBox {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  align-self: flex-end;
 }
 
-
 .strip {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.stripTech  {
+  display: flex;
+  justify-items: left;
+  justify-content: left;
+  align-items: center;
 }
 
 .stripeLeft {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
 }
 .map {
-    height: 200px;
-    width: 100%;
-    border: solid black 1px;
+  height: 200px;
+  width: 100%;
+  border: solid black 1px;
 }
-
-
 
 input:focus::-webkit-input-placeholder {
-    font-size: xx-small;
-    color: #9c27b0;
-    position: relative;
-    transition: 0.2s ease-out;
+  font-size: xx-small;
+  color: #9c27b0;
+  position: relative;
+  transition: 0.2s ease-out;
 }
 .buttons {
-    background-color: #1ec66c;
-    coloe: black
+  color: black;
 }
-
-
-
+.remove {
+  height: 15px;
+  width: 15px;
+  font-size: small;
+  background-color: grey;
+  border: solid 1px black;
+}
+.add {
+  height: 15px;
+  width: 15px;
+  font-size: small;
+  background-color: #9c27b0;
+  border: solid 1px black;
+}
 .offerTitle {
-    display: flex;
-    align-items: flex-start;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding-left: 20px;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-left: 20px;
 }
 .form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .inp {
-    fill: red;
-    outline-color: #9c27b0;
+  fill: red;
+  outline-color: #9c27b0;
 }
 button {
-    color: black,;
-    background-color: #4650ff;
-
+  background-color: #4650ff;
+}
+button:disabled {
+  background-color: grey;
 }

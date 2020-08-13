@@ -1,8 +1,14 @@
 import React from "react";
-import { render } from "@testing-library/react";
-import { Provider } from "react-redux";
-import { store } from "./app/store";
+import {render} from "@testing-library/react";
+import {Provider} from "react-redux";
+import {store} from "./app/store";
 import App from "./App";
+
+jest.mock("./App", () => {
+    return () => {
+        return null;
+    }
+});
 
 test("renders learn react link", () => {
   const { getByText } = render(
@@ -11,5 +17,5 @@ test("renders learn react link", () => {
     </Provider>
   );
 
-  expect(getByText(/learn/i)).toBeInTheDocument();
+  expect(getByText("Offer")).toBeInTheDocument();
 });

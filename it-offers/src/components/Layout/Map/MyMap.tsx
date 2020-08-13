@@ -1,10 +1,10 @@
 import React from "react";
 import style from "./MyMap.module.css";
-import { Map, TileLayer, Marker, Popup } from "react-leaflet";
-import { LatLngTuple } from "leaflet";
-import L from "leaflet";
-import { OfferType, selectOffers } from "../../../slices/offer/offerSlice";
-import { useSelector } from "react-redux";
+import {Map, Marker, Popup, TileLayer} from "react-leaflet";
+import L, {LatLngTuple} from "leaflet";
+import {OfferType, selectOffers} from "../../../slices/offer/offerSlice";
+import {useSelector} from "react-redux";
+import {useHistory} from "react-router";
 
 const defaultLatLng: LatLngTuple = [52.36322, 19.13884];
 const zoom: number = 6;
@@ -99,6 +99,12 @@ const MyMap: React.FC = () => {
     }),
   };
 
+  const history = useHistory();
+
+  const onClickMarker = (path: string) => {
+    history.push(path);
+  };
+
   return (
     <Map className={style.Map} center={defaultLatLng} zoom={zoom}>
       <TileLayer
@@ -106,15 +112,19 @@ const MyMap: React.FC = () => {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       ></TileLayer>
 
-      {currentOffers.map((offer: OfferType) => (
+      {currentOffers.map((offer: OfferType, index) => (
         <Marker
-          position={offer.coordinates}
+          key={index}
+            position={offer.coordinates}
           icon={icons[`${offer.mainTechnology}`]}
           onMouseOver={(e: any) => {
             e.target.openPopup();
           }}
           onMouseOut={(e: any) => {
             e.target.closePopup();
+          }}
+          onclick={(e: any) => {
+            onClickMarker(`/offer/${offer._id}`);
           }}
         >
           <Popup>

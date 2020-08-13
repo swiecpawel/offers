@@ -62,5 +62,14 @@ router.get('/tech/:techno', (req, res) => {
         .then(items => res.json(items))
 });
 
+// @rout GET api/offers
+// @desc Get Offer by id
+// @access Public
+router.get('/offer/:id', (req, res) => {
+
+    Offer.findById(req.params.id)
+        .then(item => res.json(item))
+        .catch(err => res.status(404).json({success: false}));
+});
 
 module.exports = router;

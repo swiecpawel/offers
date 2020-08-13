@@ -1,8 +1,8 @@
-import React, { useRef, useState } from "react";
-import { useDispatch } from "react-redux";
+import React, {useRef, useState} from "react";
+import {useDispatch} from "react-redux";
 import style from "./SingUp.module.css";
-import { createNewUser } from "../../../slices/user/userSlice";
-import { useHistory } from "react-router";
+import {createNewUser} from "../../../slices/user/userSlice";
+import {useHistory} from "react-router";
 import Header from "../../Header/Header";
 
 const SingUp: React.FunctionComponent = () => {

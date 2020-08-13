@@ -4,9 +4,13 @@ import LoginBut from "./LoginBut/LoginBut";
 import PostJobBut from "./PostJobBut/PostJobBut";
 import Menu from "./Menu/Menu";
 
-const rightBar = () => (
+interface RightBarProps {
+    disJob:boolean
+}
+
+const rightBar: React.FC<RightBarProps> = ({disJob}) => (
   <div className={styles.Content}>
-    <PostJobBut />
+    <PostJobBut dis={disJob} />
     <LoginBut />
     <Menu />
   </div>

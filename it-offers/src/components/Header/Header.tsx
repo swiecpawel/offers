@@ -1,17 +1,27 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import style from "./Header.module.css";
 import NavButtons from "./NavButtons/NavButtons";
 import RightBar from "./RightBar/RightBar";
+import {useSelector} from "react-redux";
+import {selectUser} from "../../slices/auth/authSlice";
 
-export interface Children {
-  children: ReactNode;
+interface Auth {
+    id?: String,
+    name: String,
+    email?: String
 }
 
-const header: React.FunctionComponent = () => (
+const Header: React.FC = () =>{
+    const auth: Auth = useSelector(selectUser);
+    let dis = false;
+    if(auth.name.length >= 1){
+        dis = true;
+    }
+    return(
   <main className={style.Content}>
     <NavButtons />
-    <RightBar />
+    <RightBar disJob={dis} />
   </main>
-);
+)};
 
-export default header;
+export default Header;

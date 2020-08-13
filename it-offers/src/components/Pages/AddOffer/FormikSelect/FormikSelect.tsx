@@ -1,10 +1,9 @@
-import React, { ReactNode } from "react";
-import { Field, ErrorMessage, FieldInputProps } from "formik";
+import React, {ReactNode} from "react";
+import {ErrorMessage, Field, FieldInputProps} from "formik";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-
 import style from "./FormikSelect.module.css";
 
 export interface FormikSelectItem {
@@ -18,6 +17,7 @@ interface FormikSelectProps {
   label: string;
   required?: boolean;
   opt: string;
+  multiple?: boolean;
 }
 
 interface MaterialUISelectFieldProps extends FieldInputProps<string> {
@@ -38,7 +38,7 @@ const MaterialUISelectField: React.FC<MaterialUISelectFieldProps> = ({
   required,
 }) => {
   return (
-    <FormControl fullWidth={true} >
+    <FormControl fullWidth={true}>
       <InputLabel required={required}>{label}</InputLabel>
       <Select
         native
@@ -60,6 +60,7 @@ const FormikSelect: React.FC<FormikSelectProps> = ({
   label,
   required = false,
   opt,
+  multiple = false,
 }) => {
   return (
     <div className={style.FormikSelect}>
@@ -68,6 +69,7 @@ const FormikSelect: React.FC<FormikSelectProps> = ({
         as={MaterialUISelectField}
         errorString={<ErrorMessage name={name} />}
         required={required}
+        multiple={multiple}
       >
         <option value="" disabled>
           {opt}

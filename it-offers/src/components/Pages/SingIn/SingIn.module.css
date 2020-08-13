@@ -14,20 +14,23 @@
   width: 100%;
   justify-content: center;
 }
-.logBox{
+.logBoxPlace {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   width: 50%;
   margin: 20px;
   min-width: 50px;
   height: 550px;
 }
-.imageBox{
+.logBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+}
+.imageBox {
   display: flex;
   width: 50%;
   margin: 20px;
   min-width: 400px;
   background-color: dodgerblue;
-
 }

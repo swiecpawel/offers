@@ -1,8 +1,28 @@
 .column {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: flex-start;
-    align-self: flex-start;
-    margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+  align-self: flex-start;
+  margin-right: 30px;
+}
+.rating {
+}
+.custom-full {
+  color: red;
+}
+.tech {
+  color: rgb(55, 71, 79);
+  font-weight: 600;
+  font-size: 16px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 90%;
+  display: block;
+  overflow: hidden;
+}
+
+.level {
+  color: rgb(153, 161, 171);
+  font-size: small;
 }

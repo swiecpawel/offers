@@ -1,7 +1,7 @@
 import React from "react";
 import {ErrorMessage, Field} from "formik";
-import {TextField} from "@material-ui/core";
-import style from "./FormikField.module.css";
+import style from "../FormikField/FormikField.module.css";
+import TechOption from "../TechOption/TechOption";
 
 interface FieldProps {
   value?: String;
@@ -14,7 +14,7 @@ interface FieldProps {
   onKey?: any;
 }
 
-const FormikField: React.FC<FieldProps> = ({
+const FormikRateField: React.FC<FieldProps> = ({
   value,
   name,
   label,
@@ -26,8 +26,10 @@ const FormikField: React.FC<FieldProps> = ({
 }) => {
   return (
     <div className={style.field}>
-      <Field value={value}
-        as={TextField}
+      <Field
+
+        value={value}
+        as={TechOption}
         label={label}
         name={name}
         fullWidth
@@ -43,4 +45,4 @@ const FormikField: React.FC<FieldProps> = ({
   );
 };
 
-export default FormikField;
+export default FormikRateField;

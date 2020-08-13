@@ -1,7 +1,7 @@
-import React, { useRef, useState } from "react";
-import { useDispatch } from "react-redux";
-import { NavLink, useHistory } from "react-router-dom";
-import { authUser } from "../../../slices/auth/authSlice";
+import React, {useRef, useState} from "react";
+import {useDispatch} from "react-redux";
+import {NavLink, useHistory} from "react-router-dom";
+import {authUser} from "../../../slices/auth/authSlice";
 import style from "./SingIn.module.css";
 import Header from "../../Header/Header";
 
@@ -43,53 +43,56 @@ const SingIn: React.FunctionComponent = () => {
     <>
       <Header />
       <div className={style.Content}>
-        <div className={style.logBox}>
-          <div>Example</div>
-          <div><h1>Get stared for free</h1></div>
-          <div> Email Address:</div>
-          <div>
-            <input
-              type="email"
-              name="email"
-              placeholder="email"
-              value={currentUser.email}
-              onChange={(e) => {
-                logUser({ ...currentUser, email: e.target.value });
-              }}
-            />
-          </div>
-          <div>Password:</div>
-          <div>
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={currentUser.password}
-              onChange={(e) => {
-                logUser({ ...currentUser, password: e.target.value });
-              }}
-            />
-          </div>
+        <div className={style.logBoxPlace}>
+          <div className={style.logBox}>
+            <div>Example</div>
+            <div>
+              <h1>Get stared for free</h1>
+            </div>
+            <div> Email Address:</div>
+            <div>
+              <input
+                type="email"
+                name="email"
+                placeholder="email"
+                value={currentUser.email}
+                onChange={(e) => {
+                  logUser({ ...currentUser, email: e.target.value });
+                }}
+              />
+            </div>
+            <div>Password:</div>
+            <div>
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={currentUser.password}
+                onChange={(e) => {
+                  logUser({ ...currentUser, password: e.target.value });
+                }}
+              />
+            </div>
 
-          <button
-            className={style.buttonSubmit}
-            onClick={() => {
-              isNotEmpty() ? nUser() : enterAllFields();
-            }}
-          >
-            Log In
-          </button>
-          <div className={style.errBox} ref={myRef}></div>
-          <div>
-            New Account?{" "}
-            <NavLink className={style.register} to={"/sing_up"}>
-              Register
-            </NavLink>
+            <button
+              className={style.buttonSubmit}
+              onClick={() => {
+                isNotEmpty() ? nUser() : enterAllFields();
+              }}
+            >
+              Log In
+            </button>
+
+            <div className={style.errBox} ref={myRef}></div>
+            <div>
+              New Account?{" "}
+              <NavLink className={style.register} to={"/sing_up"}>
+                Register
+              </NavLink>
+            </div>
           </div>
         </div>
-        <div className={style.imageBox}>
-
-        </div>
+        <div className={style.imageBox}></div>
       </div>
     </>
   );

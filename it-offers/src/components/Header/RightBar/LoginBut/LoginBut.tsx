@@ -1,7 +1,8 @@
 import React from "react";
 import style from "../../Header.module.css";
-import { IoIosArrowDown } from "react-icons/io";
-import { Link } from "react-router-dom";
+import {IoIosArrowDown} from "react-icons/io";
+import {Link} from "react-router-dom";
+
 const loginBut = () => (
   <Link to={"/sing_in"}>
     <button className={style.LogBut}>

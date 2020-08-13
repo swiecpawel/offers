@@ -1,5 +1,5 @@
 import React from "react";
-import { IoIosMenu } from "react-icons/io";
+import {IoIosMenu} from "react-icons/io";
 import style from "./Menu.module.css";
 
 const menu: React.FunctionComponent = () => (

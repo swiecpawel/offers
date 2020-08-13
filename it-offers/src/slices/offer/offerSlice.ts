@@ -1,8 +1,7 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import axios from "axios";
-import { RootState } from "../../app/store";
+import {RootState} from "../../app/store";
 import {LatLngTuple} from "leaflet";
-
 
 export interface OffersType {
   offers: Array<OfferType>;
@@ -14,13 +13,13 @@ export interface OfferType {
   shortName: String;
   companyWebsite: String;
   companyType: String;
-  companySize: Number;
+  companySize: Number | String;
   companyIndustry: String;
   experienceLevel: String;
   title: String;
   employmentType: String;
-  salaryFrom: Number;
-  salaryTo: Number;
+  salaryFrom: Number | String;
+  salaryTo: Number | String;
   currency: String;
   city: String;
   street: String;
@@ -29,7 +28,7 @@ export interface OfferType {
     {
       _id?: String;
       tech: String;
-      level: Number;
+      level: Number | String;
     }
   ];
   jobDescription: String;
@@ -40,24 +39,23 @@ const initialState: OffersType = {
   offers: [],
 };
 
-
-
 export const addNewOffer = createAsyncThunk(
-    "offer/addNewOffer",
-    // Declare the type your function argument here:
+  "offer/addNewOffer",
+  // Declare the type your function argument here:
 
-    async (offerObject: OfferType) => {
-        const headers = {
-            'Content-Type': 'application/json',
-            'x-auth-token': `${localStorage.getItem("token")}`
-        };
-      const response = await axios.post(
-          "http://localhost:5000/api/offers",
-          offerObject, {headers: headers}
-      );
+  async (offerObject: OfferType) => {
+    const headers = {
+      "Content-Type": "application/json",
+      "x-auth-token": `${localStorage.getItem("token")}`,
+    };
+    const response = await axios.post(
+      "http://localhost:5000/api/offers",
+      offerObject,
+      { headers: headers }
+    );
 
-      return await response.data.offer;
-    }
+    return response.data as OfferType;
+  }
 );
 
 export const fetchAllOffers = createAsyncThunk(
@@ -85,6 +83,7 @@ export const fetchOffersByTech = createAsyncThunk(
   }
 );
 
+
 export const offersSlice = createSlice({
   name: "offers",
   initialState,
@@ -103,10 +102,10 @@ export const offersSlice = createSlice({
       }
     );
     builder.addCase(
-        addNewOffer.fulfilled,
-        (state, action: PayloadAction<OfferType[]>) => {
-          state.offers = action.payload;
-        }
+      addNewOffer.fulfilled,
+      (state, action: PayloadAction<OfferType>) => {
+        state.offers.push(action.payload);
+      }
     );
   },
 });

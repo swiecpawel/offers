@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./NavButtons.module.css";
-import { MdWork, MdDomain } from "react-icons/md";
-import { FaRegNewspaper } from "react-icons/fa";
-import { GiSuitcase } from "react-icons/gi";
+import {MdDomain, MdWork} from "react-icons/md";
+import {FaRegNewspaper} from "react-icons/fa";
+import {GiSuitcase} from "react-icons/gi";
 import Logo from "./Logo/Logo";
 import NavButton from "./NavButton/NavButton";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const navButtons: React.FunctionComponent = () => (
   <div className={styles.Content}>

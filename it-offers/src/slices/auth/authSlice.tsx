@@ -1,5 +1,6 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import axios from "axios";
+import {RootState} from "../../app/store";
 
 export interface StateAuthType {
   auth: AuthUserType;
@@ -25,7 +26,6 @@ const initialState: StateAuthType = {
 
 export const authUser = createAsyncThunk(
   "auth/logIn",
-  // Declare the type your function argument here:
 
   async (userObject: AutType) => {
     const response = await axios.post(
@@ -33,7 +33,7 @@ export const authUser = createAsyncThunk(
       userObject
     );
     localStorage.setItem("token", response.data.token);
-    console.log(response.data.user.name)
+    console.log(response.data.user.name);
     return response.data.user;
   }
 );
@@ -51,5 +51,5 @@ export const authSlice = createSlice({
     );
   },
 });
-//export const selectOffers = (state: RootState) => state.auth.auth;
+export const selectUser = (state: RootState) => state.auth.auth;
 export default authSlice.reducer;
